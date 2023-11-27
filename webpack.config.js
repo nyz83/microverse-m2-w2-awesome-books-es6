@@ -1,13 +1,17 @@
 /** @format */
 
 const path = require('path');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: {
+    bundle: path.resolve(__dirname, './src/index.js'),
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name][contenthash].js',
   },
   devServer: {
     static: {
@@ -28,4 +32,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HTMLWebpackPlugin({
+      title: 'Awesome Books ES6',
+      filename: 'index.html',
+      template: 'src/index.html',
+    }),
+  ],
 };
