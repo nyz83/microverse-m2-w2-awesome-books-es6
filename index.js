@@ -1,7 +1,7 @@
-import './index.css';
+import '/index.css';
 import { DateTime } from 'luxon';
-import Library from '../modules/Library.js';
-import Book from '../modules/Book.js';
+import Library from '/modules/Library.js';
+import Book from '/modules/Book.js';
 import {
   bookCollection,
   bookForm,
@@ -16,7 +16,7 @@ import {
   bookCreate,
   contactUs,
   dateTime,
-} from '../modules/variables.js';
+} from '/modules/variables.js';
 
 dateTime.textContent = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 
